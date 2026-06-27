@@ -3,12 +3,16 @@
 	import { theme } from '$lib/theme.svelte';
 	import { Sun, Moon } from 'lucide-svelte';
 	import { _ } from 'svelte-i18n';
+	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
-	import gsap from 'gsap';
 
 	let heading: HTMLHeadingElement;
 
-	onMount(() => {
+	onMount(async () => {
+		if (!browser) return;
+
+		const { default: gsap } = await import('gsap');
+
 		gsap.from(heading, {
 			y: 50,
 			opacity: 0,
