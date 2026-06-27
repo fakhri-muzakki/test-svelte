@@ -3,18 +3,18 @@
 	import { theme } from '$lib/theme.svelte';
 	import { Sun, Moon } from 'lucide-svelte';
 	import { _ } from 'svelte-i18n';
-	// import { onMount } from 'svelte';
-	// import gsap from 'gsap';
+	import { onMount } from 'svelte';
+	import gsap from 'gsap';
 
-	// let heading: HTMLHeadingElement;
+	let heading: HTMLHeadingElement;
 
-	// onMount(() => {
-	// 	gsap.from(heading, {
-	// 		y: 50,
-	// 		opacity: 0,
-	// 		duration: 1
-	// 	});
-	// });
+	onMount(() => {
+		gsap.from(heading, {
+			y: 50,
+			opacity: 0,
+			duration: 1
+		});
+	});
 </script>
 
 <div
@@ -27,9 +27,7 @@
 		dark:text-white
 	"
 >
-	<!-- <h1 bind:this={heading}>
-	Hello GSAP
-</h1> -->
+	<h1 bind:this={heading}>Hello GSAP</h1>
 	<h1>{$_('common.hello')}</h1>
 	<LanguageToggle />
 	<button
