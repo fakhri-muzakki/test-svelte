@@ -3,6 +3,7 @@
 	import favicon from '$lib/assets/favicon.svg';
 	import { onMount } from 'svelte';
 	import { theme } from '$lib/theme.svelte';
+	import '$lib/i18n';
 
 	onMount(() => {
 		theme.init();

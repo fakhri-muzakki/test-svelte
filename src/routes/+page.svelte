@@ -1,6 +1,8 @@
 <script lang="ts">
+	import LanguageToggle from '$lib/components/language-toggle.svelte';
 	import { theme } from '$lib/theme.svelte';
 	import { Sun, Moon } from 'lucide-svelte';
+	import { _ } from 'svelte-i18n';
 	// import { onMount } from 'svelte';
 	// import gsap from 'gsap';
 
@@ -28,6 +30,8 @@
 	<!-- <h1 bind:this={heading}>
 	Hello GSAP
 </h1> -->
+	<h1>{$_('common.hello')}</h1>
+	<LanguageToggle />
 	<button
 		class="fixed bottom-4 right-4"
 		onclick={() => theme.set(theme.current === 'dark' ? 'light' : 'dark')}
